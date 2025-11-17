@@ -67,25 +67,4 @@ impl Mob {
     fn destroi(&mut self) {
         self.base_mut().queue_free();
     }
-    
-/*    #[func]
-    fn on_player_poder(&mut self) {
-        let mut sprite = self.base().get_node_as::<AnimatedSprite2D>("AnimatedSprite2D");
-        sprite.set_animation("explosion");
-        sprite.play();
-        self.schedule_free_after_animation();
-    }
-
-    fn schedule_free_after_animation(&self) {
-        let mut sprite = self.base().get_node_as::<AnimatedSprite2D>("AnimatedSprite2D");
-        
-        // Conectar sinal de animação terminada
-        let target = self.base().callable("on_explosion_finished");
-        let _ = sprite.connect("animation_finished".into(), &target);
-    }
-
-    #[func]
-    fn on_explosion_finished(&mut self) {
-        self.base_mut().queue_free();
-    }*/
 }
