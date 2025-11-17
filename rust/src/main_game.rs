@@ -1,4 +1,4 @@
-/// main_game.rs
+
 use godot::prelude::*;
 use godot::classes::{Node, Marker2D, Timer, PathFollow2D, AudioStreamPlayer, CanvasItem};
 use crate::{Mob, Player, HUD};
@@ -30,7 +30,7 @@ impl INode for Main {
         self.clouds1().set_visible(true);
         self.clouds2().set_visible(false);
         self.clouds3().set_visible(false);
-        // se o jogador for atingido o jogo acaba
+        
         self.player
             .signals()
             .hit()
@@ -61,8 +61,7 @@ impl INode for Main {
 
 #[godot_api]
 impl Main {
-    // Nenhuma dessas funções será usada pelo Godot então não temos que adicionar o macro `#[func]`
-    // encerra o jogo
+
     fn game_over(&mut self) {
         self.score_timer().stop();
         self.mob_timer().stop();
