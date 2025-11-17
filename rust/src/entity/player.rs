@@ -6,7 +6,7 @@ use godot::classes::{ Area2D, IArea2D, Input, AnimatedSprite2D, CollisionShape2D
 #[class(base=Area2D)]
 pub struct Player {
     #[export]
-    speed: f32, // queremos que esse atributo apareça na UI do Godot
+    speed: f32, 
 
     screen_size: Vector2,
     base: Base<Area2D>
@@ -35,16 +35,16 @@ impl IArea2D for Player {
         let mut velocity = Vector2::ZERO;
     
         if input.is_action_pressed("move_right") {
-            velocity += Vector2::RIGHT; // (1,0)
+            velocity += Vector2::RIGHT; 
         }
         if input.is_action_pressed("move_left") {
-            velocity += Vector2::LEFT; // (-1, 0)
+            velocity += Vector2::LEFT; 
         }
         if input.is_action_pressed("move_up") {
-            velocity += Vector2::UP; // (0, -1)
+            velocity += Vector2::UP; 
         }
         if input.is_action_pressed("move_down") {
-            velocity += Vector2::DOWN; // (0, 1)
+            velocity += Vector2::DOWN; 
         }
         if input.is_action_pressed("power") {
             if let Some(mut tree) = self.base().get_tree() {
